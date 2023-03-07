@@ -3,6 +3,8 @@ const {
   postProject,
   getAllProjects,
   getSingleProject,
+  deleteProject,
+  updateProject,
 } = require("../controllers/projectController");
 
 //router
@@ -18,13 +20,9 @@ router.get("/:id", getSingleProject);
 router.post("/", postProject);
 
 //DELETE A PROJECT
-router.delete("/:id", (req, res) => {
-  res.json({ message: "DELETE A PROJECT" });
-});
+router.delete("/:id", deleteProject);
 
 //UPDATE A NEW PROJECT
-router.patch("/:id", (req, res) => {
-  res.json({ message: "UPDATE A PROJECT" });
-});
+router.patch("/:id", updateProject);
 
 module.exports = router;
